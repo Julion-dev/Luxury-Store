@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Sneakers & Tech - Votre Boutique Premium</title>
+    <meta
+      name="description"
+      content="Luxury Store est une boutique en ligne se trouvant partout sur le continant d'Afrique depuis 2020."
+    />
+    <meta
+      name="keywords"
+      content="E-commerce, Commerce en ligne, boutique de luxe en ligne"
+    />
+    <meta name="author" content="Julien Mastaki" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">LUXURY<span>STORE</span></a>
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li class="dropdown">
+            <a href="products.html"
+              >Produits <i class="fas fa-chevron-down"></i
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="products.html?category=sneakers">Sneakers</a></li>
+              <li>
+                <a href="products.html?category=smartphones">Smartphones</a>
+              </li>
+              <li>
+                <a href="products.html?category=accessories">Accessoires</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="testimonials.html">Avis</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="cart-icon">
+            <a href="#cart"
+              ><i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            style="background-image: url(&quot;assets/images/hero1.jpg&quot;)"
+          >
+            <div class="hero-content">
+              <h1 class="hero-title">Collection Exclusive 2025</h1>
+              <p class="hero-subtitle">
+                Découvrez les dernières sneakers et smartphones de luxe
+              </p>
+              <a href="products.html" class="cta-button">Explorer maintenant</a>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            style="background-image: url(&quot;assets/images/hero2.jpg&quot;)"
+          >
+            <div class="hero-content">
+              <h1 class="hero-title">Édition Limitée</h1>
+              <p class="hero-subtitle">
+                Pièces rares et numérotées disponibles
+              </p>
+              <a href="products.html?category=limited" class="cta-button"
+                >Voir les exclusivités</a
+              >
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            style="background-image: url(&quot;assets/images/hero3.jpg&quot;)"
+          >
+            <div class="hero-content">
+              <h1 class="hero-title">Livraison Express</h1>
+              <p class="hero-subtitle">
+                Recevez vos articles en 24h dans toute l'Afrique
+              </p>
+              <a href="about.html#shipping" class="cta-button"
+                >En savoir plus</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Section Catégories -->
+    <section class="categories-section">
+      <div class="container">
+        <h2 class="section-title">Nos Catégories</h2>
+        <div class="categories-grid">
+          <div class="category-card">
+            <div
+              class="category-image"
+              style="
+                background-image: url(&quot;assets/images/category-sneakers.jpg&quot;);
+              "
+            ></div>
+            <div class="category-content">
+              <h3>Sneakers</h3>
+              <p>Collection exclusive de baskets de marque</p>
+              <a href="products.html?category=sneakers" class="category-link"
+                >Voir la collection <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div
+              class="category-image"
+              style="
+                background-image: url(&quot;assets/images/category-phones.jpg&quot;);
+              "
+            ></div>
+            <div class="category-content">
+              <h3>Smartphones</h3>
+              <p>Derniers modèles haut de gamme</p>
+              <a href="products.html?category=smartphones" class="category-link"
+                >Découvrir <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div
+              class="category-image"
+              style="
+                background-image: url(&quot;assets/images/category-accessories.jpg&quot;);
+              "
+            ></div>
+            <div class="category-content">
+              <h3>Accessoires</h3>
+              <p>Complétez votre style</p>
+              <a href="products.html?category=accessories" class="category-link"
+                >Explorer <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Produits Vedettes -->
+    <section class="featured-products">
+      <div class="container">
+        <h2 class="section-title">Produits Vedettes</h2>
+        <div class="products-grid">
+          <!-- Produit 1 -->
+          <div class="product-card">
+            <div class="product-badge">Nouveau</div>
+            <div class="product-image">
+              <img
+                src="assets/images/product1.jpg"
+                alt="Air Jordan 1 Retro High OG"
+              />
+              <div class="product-actions">
+                <button class="quick-view" data-id="1">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="add-to-wishlist" data-id="1">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Air Jordan 1 Retro High OG</h3>
+              <div class="product-price">€299.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(24)</span>
+              </div>
+              <button class="add-to-cart">Ajouter au panier</button>
+            </div>
+          </div>
+
+          <!-- Produit 2 -->
+          <div class="product-card">
+            <div class="product-badge">-15%</div>
+            <div class="product-image">
+              <img
+                src="assets/images/product2.jpg"
+                alt="iPhone 15 Pro Max 512GB"
+              />
+              <div class="product-actions">
+                <button class="quick-view" data-id="2">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="add-to-wishlist" data-id="2">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">iPhone 15 Pro Max 512GB</h3>
+              <div class="product-price">
+                <span class="old-price">€1,499.00</span>
+                <span class="new-price">€1,274.99</span>
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(18)</span>
+              </div>
+              <button class="add-to-cart">Ajouter au panier</button>
+            </div>
+          </div>
+
+          <!-- Produit 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="assets/images/product3.jpg" alt="Yeezy Boost 350 V2" />
+              <div class="product-actions">
+                <button class="quick-view" data-id="3">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="add-to-wishlist" data-id="3">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Yeezy Boost 350 V2</h3>
+              <div class="product-price">€249.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(32)</span>
+              </div>
+              <button class="add-to-cart">Ajouter au panier</button>
+            </div>
+          </div>
+
+          <!-- Produit 4 -->
+          <div class="product-card">
+            <div class="product-badge">Édition Limitée</div>
+            <div class="product-image">
+              <img
+                src="assets/images/product4.jpg"
+                alt="Samsung Galaxy S23 Ultra"
+              />
+              <div class="product-actions">
+                <button class="quick-view" data-id="4">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="add-to-wishlist" data-id="4">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Samsung Galaxy S25 Ultra</h3>
+              <div class="product-price">€1,199.00</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(21)</span>
+              </div>
+              <button class="add-to-cart">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="section-footer">
+          <a href="products.html" class="view-all"
+            >Voir tous les produits <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Valeurs -->
+    <section class="values-section">
+      <div class="container">
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-shipping-fast"></i>
+            </div>
+            <h3>Livraison Rapide</h3>
+            <p>Expédition sous 24h et livraison en 48h en Afrique</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Paiement Sécurisé</h3>
+            <p>Transactions cryptées et protégées</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Authenticité Garantie</h3>
+            <p>Tous nos produits sont certifiés authentiques</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Support 24/7</h3>
+            <p>Service client disponible à tout moment</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Blog -->
+    <section class="blog-section">
+      <div class="container">
+        <h2 class="section-title">Derniers Articles</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-image">
+              <img
+                src="assets/images/blog1.jpg"
+                alt="Guide d'entretien des sneakers"
+              />
+              <div class="blog-date">15 MAI 2025</div>
+            </div>
+            <div class="blog-content">
+              <h3>
+                <a href="blog/guide-entretien-sneakers.html"
+                  >Guide complet pour entretenir vos sneakers de collection</a
+                >
+              </h3>
+              <p class="blog-excerpt">
+                Découvrez nos conseils experts pour préserver l'état de vos
+                sneakers et maintenir leur valeur dans le temps...
+              </p>
+              <a href="blog/guide-entretien-sneakers.html" class="read-more"
+                >Lire l'article <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-image">
+              <img
+                src="assets/images/blog2.jpg"
+                alt="Comparatif smartphones 2023"
+              />
+              <div class="blog-date">10 MAI 2025</div>
+            </div>
+            <div class="blog-content">
+              <h3>
+                <a href="blog/comparatif-smartphones-2023.html"
+                  >Comparatif des meilleurs smartphones haut de gamme 2025</a
+                >
+              </h3>
+              <p class="blog-excerpt">
+                iPhone 15 Pro Max vs Galaxy S23 Ultra vs Pixel 7 Pro - lequel
+                choisir pour vos besoins ?
+              </p>
+              <a href="blog/comparatif-smart phones-2023.html" class="read-more"
+                >Lire l'article <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-image">
+              <img
+                src="assets/images/blog3.jpg"
+                alt="Tendances sneakers été 2023"
+              />
+              <div class="blog-date">5 MAI 2025</div>
+            </div>
+            <div class="blog-content">
+              <h3>
+                <a href="blog/tendances-sneakers-ete-2023.html"
+                  >Les tendances sneakers à ne pas manquer cet été 2023</a
+                >
+              </h3>
+              <p class="blog-excerpt">
+                Découvrez les modèles qui vont dominer les rues cet été et
+                comment les styliser...
+              </p>
+              <a href="blog/tendances-sneakers-ete-2023.html" class="read-more"
+                >Lire l'article <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Newsletter -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Abonnez-vous à notre newsletter</h2>
+          <p>
+            Recevez en exclusivité nos nouvelles collections, offres spéciales
+            et conseils d'experts.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre adresse email" required />
+            <button type="submit">
+              S'abonner <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3 class="footer-title">LUXURYSTORE</h3>
+            <p>
+              Votre destination premium pour les sneakers exclusives et les
+              smartphones haut de gamme.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/mastakijulien?igsh=YzljYTk1ODg3Zg=="
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/julien.wasingyamastaki.5"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://x.com/JMastaki14428"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/@JulienMastaki-o6u"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-title">LIENS RAPIDES</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="about.html">À propos</a></li>
+              <li><a href="products.html">Produits</a></li>
+              <li><a href="blog/">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-title">CATÉGORIES</h3>
+            <ul>
+              <li><a href="products.html?category=sneakers">Sneakers</a></li>
+              <li>
+                <a href="products.html?category=smartphones">Smartphones</a>
+              </li>
+              <li>
+                <a href="products.html?category=accessories">Accessoires</a>
+              </li>
+              <li>
+                <a href="products.html?category=limited">Éditions Limitées</a>
+              </li>
+              <li><a href="products.html?category=sale">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-title">CONTACT</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 310 Mtaa wa Nduguwatwana,
+                Goma, RDCongo
+              </li>
+              <li><i class="fas fa-phone"></i> +243 9 80 92 57 97</li>
+              <li><i class="fas fa-envelope"></i> contact@luxurystore.com</li>
+              <li><i class="fas fa-clock"></i> Lun-Ven: 9h-19h</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            &copy; 2026 LuxuryStore. Tous droits réservés.
+          </div>
+          <div class="footer-links">
+            <a href="privacy.html">Confidentialité</a>
+            <a href="terms.html">Conditions</a>
+            <a href="sitemap.html">Plan du site</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+  </body>
+</html>

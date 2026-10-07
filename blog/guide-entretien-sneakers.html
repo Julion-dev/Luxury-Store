@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Entretien Sneakers | Blog LuxuryStore</title>
+    <meta name="description" content="Apprenez à nettoyer, protéger et stocker vos sneakers de collection comme un expert">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <!-- Dans guide-entretien-sneakers.html et autres articles -->
+  <!-- Lecteur audio -->
+  <script src="https://cdn.jsdelivr.net/npm/speech-synthesis@latest/dist/speech-synthesis.min.js"></script>
+  <style>
+    .audio-controls {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .audio-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .audio-progress {
+      flex-grow: 1;
+      height: 4px;
+      background: #ddd;
+      border-radius: 2px;
+      position: relative;
+    }
+    .audio-progress-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: #e74c3c;
+      width: 0%;
+    }
+    .audio-speed {
+      margin-left: 10px;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+  </style>
+  <!-- Juste après <article> -->
+<article>
+  <div class="audio-controls">
+    <button class="audio-btn" id="playBtn">▶</button>
+    <div class="audio-progress">
+      <div class="audio-progress-bar" id="progressBar"></div>
+    </div>
+    <select class="audio-speed" id="speedSelect">
+      <option value="0.5">0.5×</option>
+      <option value="0.8">0.8×</option>
+      <option value="1" selected>1×</option>
+      <option value="1.2">1.2×</option>
+      <option value="1.5">1.5×</option>
+    </select>
+  </div>
+  ...
+</article>
+</head>
+<body>
+    <div data-include="../includes/header.html"></div>
+
+    <main class="article-template">
+        <article>
+            <!-- Image bannière -->
+            <img src="assets/images/entretien-sneakers.jpg" alt="Matériel pour entretenir des sneakers" class="article-banner">
+
+            <!-- En-tête article -->
+            <header class="article-header">
+                <span class="article-category">Guide pratique</span>
+                <h1>Guide complet pour entretenir vos sneakers de collection</h1>
+                <div class="article-meta">
+                    <span class="author">Par l'équipe LuxuryStore</span>
+                    <span class="date">Publié le 15 mai 2025</span>
+                    <span class="reading-time">5 min de lecture</span>
+                </div>
+            </header>
+
+            <!-- Contenu article -->
+            <div class="article-content">
+                <h2>1. Le Nettoyage de Base</h2>
+                <p>Pour les sneakers en toile comme les Nike Air Force 1 :</p>
+                <ol>
+                    <li>Utilisez une brosse à poils doux</li>
+                    <li>Mélangez eau tiède et savon pH neutre</li>
+                    <li>Nettoyez par petits mouvements circulaires</li>
+                </ol>
+
+                <h2>2. Protection Avancée</h2>
+                <p>Les produits indispensables :</p>
+                <ul>
+                    <li>Impermeabilisant Crep Protect</li>
+                    <li>Kit de nettoyage Jason Markk</li>
+                    <li>Chaussures de substitution</li>
+                </ul>
+
+                <!-- Galerie d'images -->
+                <div class="gallery">
+                    <img src="assets/images/nettoyage-sneakers.jpg" alt="Nettoyage des sneakers">
+                    <img src="assets/images/protection-sneakers.jpg" alt="Application de produit protecteur">
+                </div>
+            </div>
+
+            <!-- Partage réseaux sociaux -->
+            <div class="social-share">
+                <span>Partager :</span>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </article>
+
+        <!-- Articles similaires -->
+        <section class="related-articles">
+            <h3>Vous aimerez aussi :</h3>
+            <div class="related-grid">
+                <a href="tendances-sneakers-ete-2023.html" class="related-card">
+                    <img src="assets/images/tendances-sneakers.jpg" alt="Tendances sneakers">
+                    <h4>Tendances sneakers été 2025</h4>
+                </a>
+                <a href="comparatif-smartphones-2023.html" class="related-card">
+                    <img src="assets/images/comparatif-smartphones.jpg" alt="Comparatif smartphones">
+                    <h4>Comparatif smartphones 2023</h4>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="../includes/footer.html"></div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const playBtn = document.getElementById('playBtn');
+  const progressBar = document.getElementById('progressBar');
+  const speedSelect = document.getElementById('speedSelect');
+  let isPlaying = false;
+  let utterance = null;
+
+  // Récupère tout le texte de l'article
+  function getArticleText() {
+    const article = document.querySelector('.article-content');
+    return article.innerText.replace(/\[.*?\]/g, ''); // Supprime les annotations
+  }
+
+  playBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      window.speechSynthesis.cancel();
+      isPlaying = false;
+      playBtn.textContent = '▶';
+    } else {
+      const text = getArticleText();
+      utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'fr-FR';
+      utterance.rate = parseFloat(speedSelect.value);
+      
+      utterance.onboundary = (event) => {
+        const progress = (event.charIndex / text.length) * 100;
+        progressBar.style.width = `${progress}%`;
+      };
+      
+      utterance.onend = () => {
+        isPlaying = false;
+        playBtn.textContent = '▶';
+        progressBar.style.width = '0%';
+      };
+      
+      window.speechSynthesis.speak(utterance);
+      isPlaying = true;
+      playBtn.textContent = '⏸';
+    }
+  });
+
+  speedSelect.addEventListener('change', () => {
+    if (utterance) {
+      utterance.rate = parseFloat(speedSelect.value);
+      if (isPlaying) {
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

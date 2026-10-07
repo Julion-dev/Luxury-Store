@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - LuxuryStore</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Barre de navigation (identique à index.html) -->
+    <nav class="navbar">
+        <!-- ... -->
+    </nav>
+
+    <!-- Hero Section Produits -->
+    <section class="page-hero" style="background-image: url('assets/images/products-hero.jpg');">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Nos Produits</h1>
+                <p>Découvrez notre sélection exclusive de sneakers et smartphones haut de gamme</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Filtres -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-grid">
+                <div class="search-box">
+                    <input type="text" placeholder="Rechercher un produit...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-group">
+                    <label for="category">Catégorie:</label>
+                    <select id="category">
+                        <option value="all">Tous</option>
+                        <option value="sneakers">Sneakers</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="accessories">Accessoires</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="brand">Marque:</label>
+                    <select id="brand">
+                        <option value="all">Toutes</option>
+                        <option value="nike">Nike</option>
+                        <option value="jordan">Jordan</option>
+                        <option value="adidas">Adidas</option>
+                        <option value="apple">Apple</option>
+                        <option value="samsung">Samsung</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price">Prix:</label>
+                    <select id="price">
+                        <option value="all">Tous</option>
+                        <option value="0-100">Moins de 100€</option>
+                        <option value="100-300">100€ - 300€</option>
+                        <option value="300-500">300€ - 500€</option>
+                        <option value="500+">Plus de 500€</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort">Trier par:</label>
+                    <select id="sort">
+                        <option value="popular">Populaire</option>
+                        <option value="newest">Nouveautés</option>
+                        <option value="price-low">Prix (bas-haut)</option>
+                        <option value="price-high">Prix (haut-bas)</option>
+                        <option value="rating">Meilleures notes</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produits -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Nos Produits</h2>
+                <div class="products-count">24 produits trouvés</div>
+            </div>
+            <div class="products-grid">
+                <!-- Produit 1 -->
+                <div class="product-card" data-category="sneakers" data-brand="jordan" data-price="300-500">
+                    <div class="product-badge">Nouveau</div>
+                    <div class="product-image">
+                        <img src="assets/images/product1.jpg" alt="Air Jordan 1 Retro High OG">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="1"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Air Jordan 1 Retro High OG</h3>
+                        <div class="product-price">€299.99</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(24)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 2 -->
+                <div class="product-card" data-category="smartphones" data-brand="apple" data-price="500+">
+                    <div class="product-badge">-15%</div>
+                    <div class="product-image">
+                        <img src="assets/images/product2.jpg" alt="iPhone 15 Pro Max 512GB">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="2"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="2"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">iPhone 15 Pro Max 512GB</h3>
+                        <div class="product-price">
+                            <span class="old-price">€1,499.00</span>
+                            <span class="new-price">€1,274.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 3 -->
+                <div class="product-card" data-category="sneakers" data-brand="adidas" data-price="100-300">
+                    <div class="product-image">
+                        <img src="assets/images/product3.jpg" alt="Yeezy Boost 350 V2">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="3"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="3"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Yeezy Boost 350 V2</h3>
+                        <div class="product-price">€249.99</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(32)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 4 -->
+                <div class="product-card" data-category="smartphones" data-brand="samsung" data-price="500+">
+                    <div class="product-badge">Édition Limitée</div>
+                    <div class="product-image">
+                        <img src="assets/images/product4.jpg" alt="Samsung Galaxy S23 Ultra">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="4"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="4"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Samsung Galaxy S23 Ultra</h3>
+                        <div class="product-price">€1,199.00</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(21)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 5 -->
+                <div class="product-card" data-category="sneakers" data-brand="nike" data-price="100-300">
+                    <div class="product-image">
+                        <img src="assets/images/product5.jpg" alt="Nike Dunk Low Retro">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="5"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="5"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Nike Dunk Low Retro</h3>
+                        <div class="product-price">€129.99</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(15)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 6 -->
+                <div class="product-card" data-category="smartphones" data-brand="apple" data-price="500+">
+                    <div class="product-badge">Nouveau</div>
+                    <div class="product-image">
+                        <img src="assets/images/product6.jpg" alt="Apple Watch Ultra">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="6"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="6"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Apple Watch Ultra</h3>
+                        <div class="product-price">€899.00</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(27)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 7 -->
+                <div class="product-card" data-category="sneakers" data-brand="jordan" data-price="300-500">
+                    <div class="product-badge">Bientôt épuisé</div>
+                    <div class="product-image">
+                        <img src="assets/images/product7.jpg" alt="Air Jordan 4 Retro">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="7"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="7"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Air Jordan 4 Retro</h3>
+                        <div class="product-price">€349.99</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(42)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+                
+                <!-- Produit 8 -->
+                <div class="product-card" data-category="smartphones" data-brand="samsung" data-price="500+">
+                    <div class="product-image">
+                        <img src="assets/images/product8.jpg" alt="Samsung Galaxy Z Fold 4">
+                        <div class="product-actions">
+                            <button class="quick-view" data-id="8"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" data-id="8"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Samsung Galaxy Z Fold 4</h3>
+                        <div class="product-price">€1,799.00</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(13)</span>
+                        </div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn next">Suivant <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Abonnez-vous à notre newsletter</h2>
+                <p>Recevez en exclusivité nos nouvelles collections, offres spéciales et conseils d'experts.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit">S'abonner <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page (identique à index.html) -->
+    <footer class="footer">
+        <!-- ... -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/products-filter.js"></script>
+    <script src="assets/js/swiper.js"></script>
+</body>
+</html>
