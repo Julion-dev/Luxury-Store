@@ -1,0 +1,8 @@
+{
+  "name": "Luxury Store",
+  "description": "Boutique en ligne premium de sneakers de collection et smartphones de luxe.",
+  "requestFrame": "true",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
