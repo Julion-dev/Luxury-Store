@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Star, Eye, Heart, ShoppingBag, Check } from 'lucide-react';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
+import { ImageWithFallback } from './ImageWithFallback';
 
 interface ProductCardProps {
   product: Product;
@@ -43,11 +44,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         onClick={() => setQuickViewProduct(product)}
         className="relative h-64 overflow-hidden bg-slate-50 cursor-pointer"
       >
-        <img
+        <ImageWithFallback
           src={product.image}
           alt={product.title}
+          category={product.category}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-          loading="lazy"
         />
 
         {/* Hover Action Overlay */}

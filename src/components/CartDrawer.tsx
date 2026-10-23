@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Trash2, ShoppingBag, Plus, Minus, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { ImageWithFallback } from './ImageWithFallback';
 
 interface CartDrawerProps {
   onNavigateToProducts: () => void;
@@ -113,9 +114,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
                   key={`${item.product.id}-${item.selectedSize}`}
                   className="flex gap-4 p-3 bg-slate-50 rounded-xl border border-slate-100 relative group"
                 >
-                  <img
+                  <ImageWithFallback
                     src={item.product.image}
                     alt={item.product.title}
+                    category={item.product.category}
                     className="w-20 h-20 object-cover rounded-lg bg-white shrink-0"
                   />
                   <div className="flex-1 min-w-0 flex flex-col justify-between">

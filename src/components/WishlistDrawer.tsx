@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Heart, ShoppingBag, Trash2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { ImageWithFallback } from './ImageWithFallback';
 
 interface WishlistDrawerProps {
   onNavigateToProducts: () => void;
@@ -60,9 +61,10 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({ onNavigateToProd
                 key={product.id}
                 className="flex gap-4 p-3 bg-slate-50 rounded-xl border border-slate-100 relative items-center"
               >
-                <img
+                <ImageWithFallback
                   src={product.image}
                   alt={product.title}
+                  category={product.category}
                   className="w-20 h-20 object-cover rounded-lg bg-white shrink-0"
                 />
                 <div className="flex-1 min-w-0">

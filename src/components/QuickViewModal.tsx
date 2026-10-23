@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Star, ShoppingBag, Heart, ShieldCheck, Check, Truck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { ImageWithFallback } from './ImageWithFallback';
 
 export const QuickViewModal: React.FC = () => {
   const { quickViewProduct, setQuickViewProduct, addToCart, toggleWishlist, isInWishlist } = useCart();
@@ -44,9 +45,10 @@ export const QuickViewModal: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Image */}
           <div className="h-80 md:h-full bg-slate-50 relative flex items-center justify-center">
-            <img
+            <ImageWithFallback
               src={quickViewProduct.image}
               alt={quickViewProduct.title}
+              category={quickViewProduct.category}
               className="w-full h-full object-cover"
             />
             {quickViewProduct.badge && (
