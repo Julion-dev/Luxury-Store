@@ -38,7 +38,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <button
             onClick={() => handleNavClick('home')}
             className="flex items-center text-2xl font-black tracking-wider text-[#2c3e50] font-['Montserrat'] uppercase focus:outline-none"
@@ -47,7 +46,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <span className="text-[#e74c3c]">STORE</span>
           </button>
 
-          {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center space-x-7 font-medium text-[15px]">
             <li>
               <button
@@ -70,7 +68,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               </button>
             </li>
 
-            {/* Products Dropdown */}
             <li
               className="relative group py-2"
               onMouseEnter={() => setProductsDropdownOpen(true)}
@@ -86,7 +83,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
 
-              {/* Dropdown Menu */}
               {productsDropdownOpen && (
                 <div className="absolute top-full left-0 w-48 bg-white shadow-xl rounded-md py-2 border border-slate-100 z-50">
                   <button
@@ -151,9 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             </li>
           </ul>
 
-          {/* Action Icons */}
           <div className="flex items-center space-x-3">
-            {/* Wishlist Button */}
             <button
               onClick={() => setIsWishlistOpen(true)}
               className="relative p-2.5 rounded-full hover:bg-slate-100 text-[#2c3e50] transition-colors"
@@ -167,7 +161,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               )}
             </button>
 
-            {/* Cart Button */}
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2.5 rounded-full bg-slate-100 hover:bg-[#e74c3c] text-[#2c3e50] hover:text-white transition-all duration-200"
@@ -179,7 +172,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               </span>
             </button>
 
-            {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 text-[#2c3e50] hover:text-[#e74c3c] focus:outline-none"
@@ -190,7 +182,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-slate-200 px-6 pt-3 pb-6 space-y-3 shadow-lg">
           <button

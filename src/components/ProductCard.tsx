@@ -22,7 +22,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col border border-slate-100 relative">
-      {/* Badge */}
       {product.badge && (
         <span
           className={`absolute top-3 left-3 z-10 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider text-white shadow-sm ${
@@ -39,7 +38,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </span>
       )}
 
-      {/* Image Container with Actions */}
       <div
         onClick={() => setQuickViewProduct(product)}
         className="relative h-64 overflow-hidden bg-slate-50 cursor-pointer"
@@ -51,7 +49,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />
 
-        {/* Hover Action Overlay */}
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
           <button
             onClick={(e) => {
@@ -78,7 +75,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
 
-      {/* Info Section */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
           <span className="text-xs uppercase font-bold tracking-wider text-slate-400">
@@ -91,7 +87,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             {product.title}
           </h3>
 
-          {/* Rating */}
           <div className="flex items-center gap-1.5 mt-2 text-xs text-amber-500">
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
@@ -110,7 +105,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <span className="font-semibold text-slate-600">({product.reviewCount})</span>
           </div>
 
-          {/* Price */}
           <div className="mt-3 flex items-baseline gap-2">
             <span className="text-lg font-bold text-[#2c3e50] font-['Montserrat']">
               €{product.price.toFixed(2)}
@@ -123,7 +117,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </div>
         </div>
 
-        {/* Add to Cart Button */}
         <button
           onClick={handleAddToCart}
           className={`mt-4 w-full py-2.5 px-4 rounded-full font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer ${

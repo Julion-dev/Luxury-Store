@@ -38,7 +38,6 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
       );
     }
 
-    // Default product placeholder
     return (
       <div className={`bg-gradient-to-br from-slate-100 to-slate-200 text-slate-600 flex flex-col items-center justify-center p-4 border border-slate-200/60 ${className}`}>
         {category === 'smartphones' ? (

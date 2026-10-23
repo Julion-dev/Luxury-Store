@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Complet Débutant — Luxury Store (Julien Mastaki)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --primary: #2c3e50;
+      --accent: #e74c3c;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 50px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+
+    /* Print action bar */
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .btn-pdf {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    }
+
+    .btn-pdf:hover {
+      background-color: #c0392b;
+      transform: translateY(-2px);
+    }
+
+    header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #fee2e2;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .congrats-card {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border-left: 5px solid #3b82f6;
+      padding: 20px 25px;
+      border-radius: 12px;
+      margin-bottom: 35px;
+    }
+
+    .congrats-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: #1e40af;
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .congrats-card p {
+      font-size: 14px;
+      color: #1e3a8a;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 35px 0 15px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .num {
+      background: var(--primary);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    p, li {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tag-file {
+      background: #e2e8f0;
+      color: #334155;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    code {
+      background: #f1f5f9;
+      color: #e11d48;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12.5px;
+      line-height: 1.5;
+      margin: 12px 0;
+    }
+
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0 25px 0;
+      font-size: 13px;
+    }
+
+    .table-custom th, .table-custom td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .table-custom th {
+      background-color: #f1f5f9;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .table-custom tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    .tip {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+      font-size: 13px;
+      color: #14532d;
+    }
+
+    .footer {
+      margin-top: 50px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Print Specific Styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .action-bar {
+        display: none !important;
+      }
+      .btn-pdf {
+        display: none !important;
+      }
+      h2 {
+        page-break-after: avoid;
+      }
+      .card, pre, table {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="action-bar">
+      <div>
+        <span style="font-weight: 700; color: #2c3e50;">GUIDE OFFICIEL DU PROPRIÉTAIRE</span>
+        <div style="font-size: 12px; color: #64748b;">Luxury Store • Par Julien Mastaki</div>
+      </div>
+      <button class="btn-pdf" onclick="window.print()">
+        🖨️ Télécharger / Imprimer en PDF
+      </button>
+    </div>
+
+    <header>
+      <div class="badge">Documentation Débutant Full-Stack</div>
+      <h1>Guide Pratique de Modification du Projet</h1>
+      <p class="subtitle">Comprendre et modifier votre boutique e-commerce étape par étape en tant que débutant</p>
+    </header>
+
+    <div class="congrats-card">
+      <h3>🎉 Félicitations pour avoir validé le module HTML !</h3>
+      <p>Le HTML est la fondation de tout le web mondial. Tout ce que vous voyez sur ce site (les titres, les paragraphes, les images, les formulaires et les boutons) repose sur les balises HTML que vous venez d'apprendre. Ce guide est spécialement écrit pour faire le pont entre vos nouvelles connaissances et ce projet.</p>
+    </div>
+
+    <h2><span class="num">1</span> C'est quoi ces extensions bizarres (.tsx, .ts, .xml, .json) ?</h2>
+    <p>Ne soyez pas intimidé par ces extensions. Voici ce qu'elles veulent dire en langage simple :</p>
+    
+    <table class="table-custom">
+      <thead>
+        <tr>
+          <th>Extension</th>
+          <th>Ce que c'est en réalité</th>
+          <th>Comparaison avec ce que vous connaissez</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.tsx</code></td>
+          <td><strong>TypeScript + HTML (JSX)</strong></td>
+          <td>C'est exactement du HTML (comme <code>&lt;h1&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;button&gt;</code>), mais combiné avec du JavaScript pour rendre la page interactive.</td>
+        </tr>
+        <tr>
+          <td><code>.ts</code></td>
+          <td><strong>TypeScript pur</strong></td>
+          <td>C'est du JavaScript normal, avec une sécurité en plus pour éviter de taper des fautes dans les noms de variables.</td>
+        </tr>
+        <tr>
+          <td><code>.json</code></td>
+          <td><strong>Données pures</strong></td>
+          <td>C'est un simple fichier texte de réglages (comme un carnet d'adresses ou une liste de paramètres).</td>
+        </tr>
+        <tr>
+          <td><code>.xml</code></td>
+          <td><strong>Plan du site</strong></td>
+          <td>Un plan textuel pour aider Google à référencer vos pages.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2><span class="num">2</span> LE FICHIER MAÎTRE : <code>src/data/mockData.ts</code></h2>
+    <p><strong>C'est LE fichier le plus important pour vous.</strong> Il contient tous les produits, leurs prix, les photos et les avis clients, sous la forme d'une liste très facile à lire.</p>
+
+    <div class="card">
+      <div class="card-title">
+        <span>👟 Exemple : Modifier une paire de sneakers ou un smartphone</span>
+        <span class="tag-file">src/data/mockData.ts</span>
+      </div>
+      <p>Ouvrez ce fichier dans VS Code. Vous verrez un bloc comme celui-ci :</p>
+      <pre>
+{
+  id: 1,
+  title: 'Air Jordan 1 Retro High OG',   // ⬅️ Le nom du produit
+  category: 'sneakers',                 // ⬅️ La catégorie ('sneakers', 'smartphones', 'accessories')
+  brand: 'jordan',                      // ⬅️ La marque
+  price: 299.99,                        // ⬅️ Le prix en euros
+  oldPrice: 349.99,                     // ⬅️ (Optionnel) Ancien prix barré
+  badge: 'Nouveau',                     // ⬅️ Le badge ('Nouveau', '-15%', 'Édition Limitée')
+  description: "L'iconique Air Jordan...", // ⬅️ La description du produit
+  image: 'https://images.unsplash.com/...', // ⬅️ Le lien de la photo
+}
+      </pre>
+      <div class="tip">
+        <strong>💡 Comment changer le prix :</strong> Remplacez simplement <code>299.99</code> par <code>199.99</code> et faites <code>Ctrl + S</code>. Le navigateur se mettra à jour en direct !
+      </div>
+    </div>
+
+    <h2><span class="num">3</span> Modifier l'Adresse, Téléphone, Email et Emplacement</h2>
+
+    <div class="card">
+      <div class="card-title">
+        <span>📍 Page Contact & Showroom</span>
+        <span class="tag-file">src/pages/ContactPage.tsx</span>
+      </div>
+      <p>Pour changer les coordonnées de contact de votre entreprise :</p>
+      <ul>
+        <li><strong>Adresse physique</strong> : vers la ligne 65, cherchez le texte <code>123 Rue du Luxe, 75001 Paris</code> et écrivez votre vraie adresse.</li>
+        <li><strong>Téléphone</strong> : vers la ligne 75, modifiez <code>+33 1 23 45 67 89</code>.</li>
+        <li><strong>Email</strong> : vers la ligne 86, modifiez <code>contact@luxurystore.com</code>.</li>
+        <li><strong>Carte Google Maps</strong> : vers la ligne 255, vous trouverez une balise <code>&lt;iframe src="..."&gt;</code>. Pour changer le lieu, allez sur Google Maps sur internet, cliquez sur <em>Partager > Intégrer une carte</em>, et collez le lien dans le <code>src</code>.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>🔻 Pied de page (Footer)</span>
+        <span class="tag-file">src/components/Footer.tsx</span>
+      </div>
+      <p>Le pied de page apparaît sur toutes les pages du site :</p>
+      <ul>
+        <li>Les coordonnées en bas (lignes 170-185).</li>
+        <li>La ligne de copyright avec votre nom :  
+          <code>© 2025 LuxuryStore — Créé avec excellence par Julien Mastaki.</code>
+        </li>
+      </ul>
+    </div>
+
+    <h2><span class="num">4</span> Modifier le Nom de la Boutique et le Titre de l'onglet</h2>
+
+    <div class="card">
+      <div class="card-title">
+        <span>🏷️ Nom du site dans l'onglet du navigateur</span>
+        <span class="tag-file">index.html</span>
+      </div>
+      <p>Comme vous venez de terminer le module HTML, vous connaissez cette balise ! Ouvrez <code>index.html</code> :</p>
+      <pre>
+&lt;title&gt;Luxury Store&lt;/title&gt;
+&lt;meta name="description" content="Boutique en ligne premium..." /&gt;
+      </pre>
+      <p>Changez le texte entre les balises <code>&lt;title&gt;</code> et <code>&lt;/title&gt;</code> pour donner le titre que vous voulez à votre site.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>💎 Logo dans la barre de navigation</span>
+        <span class="tag-file">src/components/Navbar.tsx</span>
+      </div>
+      <p>Aux lignes 37 à 40, vous trouverez le code du logo :</p>
+      <pre>
+&lt;span&gt;LUXURY&lt;/span&gt;
+&lt;span className="text-[#e74c3c]"&gt;STORE&lt;/span&gt;
+      </pre>
+      <p>Vous pouvez remplacer ces deux mots par le nom de votre choix.</p>
+    </div>
+
+    <h2><span class="num">5</span> Modifier l'Histoire de l'Entreprise et l'Équipe</h2>
+
+    <div class="card">
+      <div class="card-title">
+        <span>📖 Histoire et présentation</span>
+        <span class="tag-file">src/pages/AboutPage.tsx</span>
+      </div>
+      <p>Dans ce fichier, vous pouvez modifier en texte direct :</p>
+      <ul>
+        <li>L'année de fondation (ex: 2018).</li>
+        <li>Le paragraphe <strong>"Qui sommes-nous ?"</strong> (lignes 35-50).</li>
+        <li>Les chiffres clés (5+ années d'expérience, 10K+ clients satisfaits).</li>
+        <li>La section livraison et retours (lignes 160-190).</li>
+      </ul>
+    </div>
+
+    <h2><span class="num">6</span> Utiliser Vos Propres Photos (100% Hors-Ligne)</h2>
+    <p>Pour afficher vos propres photos sans avoir besoin d'internet :</p>
+    <ol>
+      <li>Prenez vos images (ex: <code>jordan4.jpg</code> ou <code>mon-magasin.png</code>).</li>
+      <li>Copiez-les dans le dossier <strong><code>public/</code></strong> à la racine de votre projet dans VS Code.</li>
+      <li>Ouvrez <code>src/data/mockData.ts</code> et écrivez simplement :
+        <pre>image: '/jordan4.jpg',</pre>
+      </li>
+    </ol>
+    <p>L'image s'affichera immédiatement dans votre navigateur, même sans aucune connexion internet !</p>
+
+    <h2><span class="num">7</span> Aide-Mémoire des Commandes Quotidiennes</h2>
+    <div class="card">
+      <p>Pour travailler chaque jour sur votre projet :</p>
+      <ol>
+        <li>Ouvrez <strong>VS Code</strong>.</li>
+        <li>Ouvrez votre terminal (<em>Terminal > Nouveau terminal</em> ou <code>Ctrl + ~</code>).</li>
+        <li>Tapez :
+          <pre>npm run dev</pre>
+        </li>
+        <li>Ouvrez <code>http://localhost:3000</code> dans votre navigateur.</li>
+        <li>Faites vos modifications dans les fichiers, enregistrez avec <code>Ctrl + S</code> et admirez le résultat en direct !</li>
+        <li>Pour éteindre le serveur en fin de journée : faites <code>Ctrl + C</code> dans le terminal.</li>
+      </ol>
+    </div>
+
+    <div class="footer">
+      <p>Ce guide a été préparé spécialement pour la formation de <strong>Julien Mastaki</strong> • Développeur Full-Stack</p>
+      <p>Conservez ce document ou enregistrez-le en PDF via le bouton en haut de page pour le consulter à tout moment.</p>
+    </div>
+  </div>
+
+</body>
+</html>

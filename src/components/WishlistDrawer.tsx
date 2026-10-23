@@ -15,7 +15,6 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({ onNavigateToProd
   return (
     <div className="fixed inset-0 z-50 overflow-hidden bg-black/50 backdrop-blur-xs flex justify-end">
       <div className="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-300">
-        {/* Header */}
         <div className="p-6 border-b border-slate-100 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Heart className="w-6 h-6 text-[#e74c3c] fill-[#e74c3c]" />
@@ -34,7 +33,6 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({ onNavigateToProd
           </button>
         </div>
 
-        {/* Content */}
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           {wishlist.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center py-12">

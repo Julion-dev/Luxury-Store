@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle2, MessageSquare, ThumbsUp, Send } from 'lucide-react';
+import { Star, CheckCircle2, Send } from 'lucide-react';
 import { INITIAL_REVIEWS } from '../data/mockData';
 import { Review } from '../types';
 import { useCart } from '../context/CartContext';
@@ -8,7 +8,6 @@ export const TestimonialsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>(INITIAL_REVIEWS);
   const { showToast } = useCart();
 
-  // Review form state
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [orderNumber, setOrderNumber] = useState('');
@@ -44,7 +43,6 @@ export const TestimonialsPage: React.FC = () => {
     setFormSubmitted(true);
     showToast('Merci pour votre avis ! Il a été publié.');
 
-    // Reset fields
     setName('');
     setEmail('');
     setOrderNumber('');
@@ -59,7 +57,6 @@ export const TestimonialsPage: React.FC = () => {
 
   return (
     <div className="space-y-20 pb-20">
-      {/* Hero Section */}
       <section className="relative h-72 md:h-80 bg-slate-900 flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1600&q=80"
@@ -77,7 +74,6 @@ export const TestimonialsPage: React.FC = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        {/* Testimonials Grid */}
         <section>
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">
@@ -139,7 +135,6 @@ export const TestimonialsPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
         <section className="bg-slate-900 text-white rounded-3xl p-8 sm:p-14">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
             <div className="pt-4 lg:pt-0">
@@ -180,7 +175,6 @@ export const TestimonialsPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Add Review Form */}
         <section className="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-3xl border border-slate-100 shadow-md">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-black text-[#2c3e50] font-['Montserrat']">
@@ -249,7 +243,6 @@ export const TestimonialsPage: React.FC = () => {
                 />
               </div>
 
-              {/* Star Rating Picker */}
               <div>
                 <label className="block text-xs font-bold uppercase text-slate-600 mb-1">
                   Note attribuée *

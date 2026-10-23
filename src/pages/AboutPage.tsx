@@ -6,7 +6,6 @@ import { TEAM_MEMBERS } from '../data/mockData';
 export const AboutPage: React.FC = () => {
   return (
     <div className="space-y-20 pb-20">
-      {/* Hero Section */}
       <section className="relative h-72 md:h-80 bg-slate-900 flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80"
@@ -24,7 +23,6 @@ export const AboutPage: React.FC = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-        {/* Story Section */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div>
@@ -45,7 +43,6 @@ export const AboutPage: React.FC = () => {
               Aujourd'hui, nous sommes fiers de compter des milliers de clients fidèles en Europe et sur le continent africain, avec une politique intransigeante d'authentification certifiée sur chaque article vendu.
             </p>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-slate-100">
               <div>
                 <div className="text-3xl font-black text-[#e74c3c] font-['Montserrat']">5+</div>
@@ -80,7 +77,6 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Mission Pillars */}
         <section className="bg-slate-50 py-16 px-6 sm:px-12 rounded-3xl border border-slate-100">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">
@@ -131,7 +127,6 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Process Steps */}
         <section>
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">
@@ -186,7 +181,6 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Shipping Section */}
         <section id="shipping" className="bg-[#2c3e50] text-white rounded-3xl p-8 sm:p-14 overflow-hidden relative">
           <div className="max-w-3xl space-y-6">
             <span className="text-xs uppercase font-bold text-[#e74c3c] tracking-widest">
@@ -219,7 +213,6 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Team Section */}
         <section>
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">

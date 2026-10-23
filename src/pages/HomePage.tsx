@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight, ShieldCheck, Truck, Clock, RefreshCw, Star } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 import { INITIAL_PRODUCTS, INITIAL_REVIEWS, BLOG_POSTS } from '../data/mockData';
-import { Product } from '../types';
 
 interface HomePageProps {
   onNavigate: (page: string, params?: { category?: string; postId?: string }) => void;
@@ -47,7 +46,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
   return (
     <div className="space-y-16 pb-16">
-      {/* Hero Carousel */}
       <section className="relative h-[550px] md:h-[620px] overflow-hidden bg-slate-900 text-white">
         {heroSlides.map((slide, index) => (
           <div
@@ -96,7 +94,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
         ))}
 
-        {/* Carousel Arrows */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-xs transition-colors"
@@ -112,7 +109,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <ChevronRight className="w-6 h-6" />
         </button>
 
-        {/* Carousel Dots */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
           {heroSlides.map((_, i) => (
             <button
@@ -126,7 +122,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Trust Pillars */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs flex items-center gap-4">
@@ -168,7 +163,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Categories Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">
@@ -181,7 +175,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Sneakers Category */}
           <div
             onClick={() => onNavigate('products', { category: 'sneakers' })}
             className="group relative h-96 rounded-2xl overflow-hidden shadow-md cursor-pointer"
@@ -203,7 +196,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Smartphones Category */}
           <div
             onClick={() => onNavigate('products', { category: 'smartphones' })}
             className="group relative h-96 rounded-2xl overflow-hidden shadow-md cursor-pointer"
@@ -225,7 +217,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Accessories Category */}
           <div
             onClick={() => onNavigate('products', { category: 'accessories' })}
             className="group relative h-96 rounded-2xl overflow-hidden shadow-md cursor-pointer"
@@ -249,7 +240,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Featured Products */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-slate-200">
           <div>
@@ -276,7 +266,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Customer Reviews Highlight */}
       <section className="bg-slate-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -336,7 +325,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Blog Teaser */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-slate-200">
           <div>

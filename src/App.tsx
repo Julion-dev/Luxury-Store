@@ -19,7 +19,6 @@ export const App: React.FC = () => {
   const [productCategory, setProductCategory] = useState<string | undefined>(undefined);
   const [activePostId, setActivePostId] = useState<string>('1');
 
-  // Parse initial query params if present (e.g., ?category=sneakers)
   useEffect(() => {
     try {
       const params = new URLSearchParams(window.location.search);
@@ -29,7 +28,7 @@ export const App: React.FC = () => {
         setCurrentPage('products');
       }
     } catch {
-      // Ignore URL parsing errors
+      // Ignore
     }
   }, []);
 
@@ -47,10 +46,8 @@ export const App: React.FC = () => {
   return (
     <CartProvider>
       <div className="min-h-screen flex flex-col bg-[#f8f9fa] text-[#2c3e50] selection:bg-[#e74c3c] selection:text-white">
-        {/* Navigation Bar */}
         <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
 
-        {/* Main Content Area */}
         <main className="flex-1 pt-20">
           {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
           {currentPage === 'products' && (
@@ -74,13 +71,11 @@ export const App: React.FC = () => {
           )}
         </main>
 
-        {/* Modals & Drawers */}
         <QuickViewModal />
         <CartDrawer onNavigateToProducts={() => handleNavigate('products')} />
         <WishlistDrawer onNavigateToProducts={() => handleNavigate('products')} />
         <NotificationToast />
 
-        {/* Global Footer */}
         <Footer onNavigate={handleNavigate} />
       </div>
     </CartProvider>

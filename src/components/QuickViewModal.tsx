@@ -34,7 +34,6 @@ export const QuickViewModal: React.FC = () => {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200">
-        {/* Close Button */}
         <button
           onClick={() => setQuickViewProduct(null)}
           className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors"
@@ -43,7 +42,6 @@ export const QuickViewModal: React.FC = () => {
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* Image */}
           <div className="h-80 md:h-full bg-slate-50 relative flex items-center justify-center">
             <ImageWithFallback
               src={quickViewProduct.image}
@@ -58,7 +56,6 @@ export const QuickViewModal: React.FC = () => {
             )}
           </div>
 
-          {/* Details */}
           <div className="p-6 md:p-8 flex flex-col justify-between">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -68,7 +65,6 @@ export const QuickViewModal: React.FC = () => {
                 {quickViewProduct.title}
               </h2>
 
-              {/* Rating */}
               <div className="flex items-center gap-2 mt-2 text-amber-500 text-sm">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
@@ -87,7 +83,6 @@ export const QuickViewModal: React.FC = () => {
                 </span>
               </div>
 
-              {/* Price */}
               <div className="mt-4 flex items-baseline gap-3">
                 <span className="text-2xl font-black text-[#2c3e50] font-['Montserrat']">
                   €{quickViewProduct.price.toFixed(2)}
@@ -99,12 +94,10 @@ export const QuickViewModal: React.FC = () => {
                 )}
               </div>
 
-              {/* Description */}
               <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                 {quickViewProduct.description}
               </p>
 
-              {/* Options (Size / Storage) */}
               <div className="mt-5">
                 <label className="text-xs font-bold uppercase text-slate-500 mb-2 block">
                   {quickViewProduct.category === 'sneakers'
@@ -130,7 +123,6 @@ export const QuickViewModal: React.FC = () => {
                 </div>
               </div>
 
-              {/* Quantity */}
               <div className="mt-5 flex items-center gap-4">
                 <span className="text-xs font-bold uppercase text-slate-500">Quantité</span>
                 <div className="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
@@ -151,7 +143,6 @@ export const QuickViewModal: React.FC = () => {
               </div>
             </div>
 
-            {/* Actions */}
             <div className="mt-6 pt-5 border-t border-slate-100 flex gap-3">
               <button
                 onClick={handleAddToCart}
@@ -184,7 +175,6 @@ export const QuickViewModal: React.FC = () => {
               </button>
             </div>
 
-            {/* Trust badge */}
             <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
               <span className="flex items-center gap-1.5 text-emerald-700 font-medium">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" /> Authenticité 100% certifiée

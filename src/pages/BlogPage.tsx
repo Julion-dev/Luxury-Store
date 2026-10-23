@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Search, Calendar, Clock, Tag } from 'lucide-react';
+import { ArrowRight, Search, Calendar, Clock } from 'lucide-react';
 import { BLOG_POSTS } from '../data/mockData';
 
 interface BlogPageProps {
@@ -23,7 +23,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateToPost }) => {
 
   return (
     <div className="space-y-16 pb-20">
-      {/* Hero Banner */}
       <section className="relative h-72 md:h-80 bg-slate-900 flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1512374382149-233c42b6613c?auto=format&fit=crop&w=1600&q=80"
@@ -41,7 +40,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateToPost }) => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        {/* Search & Category Filter */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
@@ -71,7 +69,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigateToPost }) => {
           </div>
         </div>
 
-        {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {filteredPosts.map((post) => (
             <article

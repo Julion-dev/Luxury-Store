@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, ChevronDown, Check, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, ChevronDown, Check, MessageCircle } from 'lucide-react';
 import { InstagramIcon, FacebookIcon, TwitterIcon } from '../components/SocialIcons';
 import { FAQS } from '../data/mockData';
 import { useCart } from '../context/CartContext';
@@ -7,7 +7,6 @@ import { useCart } from '../context/CartContext';
 export const ContactPage: React.FC = () => {
   const { showToast } = useCart();
 
-  // Contact form state
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -16,7 +15,6 @@ export const ContactPage: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // FAQ Accordion state
   const [activeFaq, setActiveFaq] = useState<number | null>(1);
 
   const validate = () => {
@@ -56,7 +54,6 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="space-y-20 pb-20">
-      {/* Hero Section */}
       <section className="relative h-72 md:h-80 bg-slate-900 flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
@@ -74,9 +71,7 @@ export const ContactPage: React.FC = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        {/* Contact Info & Form */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Contact Details */}
           <div className="lg:col-span-5 space-y-8">
             <div>
               <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">
@@ -122,7 +117,6 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Socials */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
                 Suivez-nous sur les réseaux
@@ -160,7 +154,6 @@ export const ContactPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-lg">
             <h3 className="text-2xl font-black text-[#2c3e50] font-['Montserrat'] mb-2">
               Envoyez-nous un message
@@ -292,7 +285,6 @@ export const ContactPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Map Section */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">
@@ -317,7 +309,6 @@ export const ContactPage: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ Accordion */}
         <section className="max-w-4xl mx-auto space-y-8">
           <div className="text-center">
             <h2 className="text-3xl font-black text-[#2c3e50] font-['Montserrat']">

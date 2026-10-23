@@ -24,7 +24,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     <footer className="bg-[#1e293b] text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand Info */}
           <div>
             <div className="flex items-center text-2xl font-black tracking-wider text-white font-['Montserrat'] uppercase mb-4">
               <span>LUXURY</span>
@@ -61,7 +60,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-white font-bold text-base uppercase tracking-wider mb-5 font-['Montserrat']">
               Navigation
@@ -118,7 +116,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Categories */}
           <div>
             <h3 className="text-white font-bold text-base uppercase tracking-wider mb-5 font-['Montserrat']">
               Catégories
@@ -160,7 +157,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Contact & Newsletter */}
           <div>
             <h3 className="text-white font-bold text-base uppercase tracking-wider mb-5 font-['Montserrat']">
               Newsletter
@@ -211,7 +207,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
           <p>© {new Date().getFullYear()} LuxuryStore — Créé avec excellence par Julien Mastaki. Tous droits réservés.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">

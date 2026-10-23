@@ -25,7 +25,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
   const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
 
-  // Checkout form
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [customerAddress, setCustomerAddress] = useState('');
@@ -68,7 +67,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
     <>
       <div className="fixed inset-0 z-50 overflow-hidden bg-black/50 backdrop-blur-xs flex justify-end">
         <div className="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-300">
-          {/* Header */}
           <div className="p-6 border-b border-slate-100 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <ShoppingBag className="w-6 h-6 text-[#e74c3c]" />
@@ -87,7 +85,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
             </button>
           </div>
 
-          {/* Cart Items List */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
             {cart.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">
@@ -167,10 +164,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
             )}
           </div>
 
-          {/* Footer Summary & Checkout */}
           {cart.length > 0 && (
             <div className="p-6 border-t border-slate-100 bg-white space-y-4">
-              {/* Promo Code Input */}
               <form onSubmit={handleApplyPromo} className="space-y-1">
                 <div className="flex">
                   <input
@@ -195,7 +190,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
                 )}
               </form>
 
-              {/* Subtotals */}
               <div className="space-y-1.5 text-xs text-slate-600">
                 <div className="flex justify-between">
                   <span>Sous-total</span>
@@ -217,7 +211,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
                 </div>
               </div>
 
-              {/* Checkout Trigger Button */}
               <button
                 onClick={() => setCheckoutModalOpen(true)}
                 className="w-full py-3.5 px-6 rounded-full bg-[#e74c3c] hover:bg-[#c0392b] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all cursor-pointer"
@@ -235,7 +228,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onNavigateToProducts }) 
         </div>
       </div>
 
-      {/* Checkout Modal */}
       {checkoutModalOpen && (
         <div className="fixed inset-0 z-60 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-in zoom-in-95 duration-200">

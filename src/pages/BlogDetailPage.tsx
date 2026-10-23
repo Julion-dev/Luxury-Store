@@ -17,14 +17,12 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
   const post = BLOG_POSTS.find((p) => p.id === postId) || BLOG_POSTS[0];
   const { showToast } = useCart();
 
-  // Audio Speech Synthesis state
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState<number>(1);
   const [progress, setProgress] = useState(0);
   const [copied, setCopied] = useState(false);
   const progressTimerRef = useRef<any>(null);
 
-  // Stop speech when leaving page
   useEffect(() => {
     return () => {
       if ('speechSynthesis' in window) {
@@ -69,7 +67,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
       setIsPlaying(true);
       setProgress(0);
 
-      const estimatedDuration = (fullTextToRead.split(' ').length / (130 * speed)) * 60; // seconds
+      const estimatedDuration = (fullTextToRead.split(' ').length / (130 * speed)) * 60;
       const startTime = Date.now();
 
       progressTimerRef.current = setInterval(() => {
@@ -101,7 +99,6 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
 
   return (
     <div className="space-y-12 pb-20">
-      {/* Top Navigation */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-6">
         <button
           onClick={onBack}
@@ -113,7 +110,6 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
       </div>
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
-        {/* Banner */}
         <div className="rounded-3xl overflow-hidden shadow-lg h-72 sm:h-96 w-full bg-slate-900 relative">
           <img
             src={post.bannerImage}
@@ -125,7 +121,6 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
           </span>
         </div>
 
-        {/* Header Meta */}
         <div className="space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#2c3e50] font-['Montserrat'] leading-tight">
             {post.title}
@@ -159,7 +154,6 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
           </div>
         </div>
 
-        {/* Interactive Audio Player (as in original guide-entretien-sneakers.html) */}
         <div className="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200/80 flex items-center gap-4 shadow-xs">
           <button
             onClick={toggleAudio}
@@ -200,12 +194,10 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
           </select>
         </div>
 
-        {/* Lead Excerpt */}
         <p className="text-lg text-slate-700 font-medium leading-relaxed bg-rose-50/50 p-6 rounded-2xl border-l-4 border-[#e74c3c]">
           {post.excerpt}
         </p>
 
-        {/* Structured Content */}
         <div className="space-y-6 text-slate-700 text-sm sm:text-base leading-relaxed">
           {post.content.map((paragraph, idx) => (
             <div key={idx} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-xs space-y-2">
@@ -216,7 +208,6 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
           ))}
         </div>
 
-        {/* Post Footer Callout */}
         <div className="p-8 bg-[#2c3e50] text-white rounded-3xl mt-12 text-center space-y-4">
           <h3 className="text-xl font-bold font-['Montserrat']">
             Besoin de conseils personnalisés sur vos sneakers ou smartphones ?
@@ -232,7 +223,6 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({
           </button>
         </div>
 
-        {/* Related Posts */}
         <div className="pt-12 border-t border-slate-200">
           <h3 className="text-xl font-black text-[#2c3e50] font-['Montserrat'] mb-6">
             Articles Recommandés

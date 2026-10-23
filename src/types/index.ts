@@ -8,7 +8,7 @@ export interface Product {
   rating: number;
   reviewCount: number;
   image: string;
-  badge?: string; // 'Nouveau' | '-15%' | 'Édition Limitée' | 'Bientôt épuisé'
+  badge?: string;
   description: string;
   features?: string[];
   inStock: boolean;

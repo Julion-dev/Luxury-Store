@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Info } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export const NotificationToast: React.FC = () => {

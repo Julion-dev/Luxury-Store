@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Search, Filter, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 import { INITIAL_PRODUCTS } from '../data/mockData';
-import { Product } from '../types';
 
 interface ProductsPageProps {
   initialCategory?: string;
@@ -30,7 +29,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
   const filteredProducts = useMemo(() => {
     let result = [...INITIAL_PRODUCTS];
 
-    // Search filter
     if (searchTerm.trim()) {
       const term = searchTerm.toLowerCase();
       result = result.filter(
@@ -41,17 +39,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
       );
     }
 
-    // Category filter
     if (selectedCategory !== 'all') {
       result = result.filter((p) => p.category === selectedCategory);
     }
 
-    // Brand filter
     if (selectedBrand !== 'all') {
       result = result.filter((p) => p.brand.toLowerCase() === selectedBrand.toLowerCase());
     }
 
-    // Price filter
     if (selectedPrice !== 'all') {
       if (selectedPrice === '0-100') {
         result = result.filter((p) => p.price < 100);
@@ -64,7 +59,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
       }
     }
 
-    // Sorting
     if (selectedSort === 'price-low') {
       result.sort((a, b) => a.price - b.price);
     } else if (selectedSort === 'price-high') {
@@ -99,7 +93,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
 
   return (
     <div className="space-y-10 pb-20">
-      {/* Page Hero Banner */}
       <section className="relative h-64 md:h-72 bg-slate-900 flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=1600&q=80"
@@ -117,10 +110,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Filters Panel */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {/* Search Box */}
             <div className="relative lg:col-span-1">
               <input
                 type="text"
@@ -135,7 +126,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
             </div>
 
-            {/* Category Filter */}
             <div>
               <label className="block text-[11px] font-bold uppercase text-slate-400 mb-1">
                 Catégorie
@@ -155,7 +145,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               </select>
             </div>
 
-            {/* Brand Filter */}
             <div>
               <label className="block text-[11px] font-bold uppercase text-slate-400 mb-1">
                 Marque
@@ -177,7 +166,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               </select>
             </div>
 
-            {/* Price Filter */}
             <div>
               <label className="block text-[11px] font-bold uppercase text-slate-400 mb-1">
                 Prix
@@ -198,7 +186,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               </select>
             </div>
 
-            {/* Sort Filter */}
             <div>
               <label className="block text-[11px] font-bold uppercase text-slate-400 mb-1">
                 Trier par
@@ -217,7 +204,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
             </div>
           </div>
 
-          {/* Result Count & Reset */}
           <div className="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
             <span className="font-bold text-slate-600">
               {filteredProducts.length} produit{filteredProducts.length > 1 ? 's' : ''} trouvé
@@ -236,7 +222,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
         </div>
 
-        {/* Products Grid */}
         {filteredProducts.length === 0 ? (
           <div className="bg-white rounded-2xl p-16 text-center border border-slate-100">
             <Filter className="w-12 h-12 text-slate-300 mx-auto mb-4" />
@@ -259,7 +244,6 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
         )}
 
-        {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex items-center justify-center gap-2 pt-6">
             <button
